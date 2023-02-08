@@ -11,6 +11,8 @@ namespace PrimeraEntrega.Handlers
     public class UsuarioHandler
     {
         public static string connetionString = "Data Source=QT5\\SQLEXPRESS;Initial Catalog=SistemaGestion;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+       
+        
         public static Usuario ObtenerUsuario(long id)
         {
 
@@ -41,6 +43,8 @@ namespace PrimeraEntrega.Handlers
         }
 
 
+        
+        
         public static Usuario ObtenerUsuarioLogin(string usuario, string contraseña)
         {
             Usuario usuarioLogin = new Usuario();

@@ -11,6 +11,8 @@ namespace PrimeraEntrega.Handlers
     public class ProductoHandler
     {
         public static string connetionString = "Data Source=QT5\\SQLEXPRESS;Initial Catalog=SistemaGestion;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        
+        
         public static List<Producto> ObtenerProductos(long idUsuario)
         {
             List<Producto> productos = new List<Producto>();
@@ -43,27 +45,15 @@ namespace PrimeraEntrega.Handlers
             }
         }
 
+        
+        
         public static Producto ObtenerProducto(long id)
         {
             Producto producto = new Producto();
-            //string cadenaConexion = "Data Source = DESKTOP-SUJUNQM; Initial Catalog = SISTEMADEGESTION; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
+
             using (SqlConnection conn = new SqlConnection(connetionString))
             {
-                // Forma 1 para crear un comando con parametros
-                //SqlCommand comando = new SqlCommand($"SELECT * FROM Producto WHERE Descripciones = '{descripciones}' ", conn);
-
-                // Forma 2 para crear un comando con parametros
-                //SqlCommand comando2 = new SqlCommand("SELECT * FROM Producto WHERE Descripciones = @Descripciones", conn);
-
-                // Creo mi parametro de descripciones
-                //SqlParameter DescriptionParameter = new SqlParameter();
-                //DescriptionParameter.Value = descripciones;
-                //IdParameter.SqlDbType = SqlDbType.VarChar;
-                //DescriptionParameter.ParameterName= "Descripciones";
-
-                //comando2.Parameters.Add(DescriptionParameter);
-
-                // Forma 3 para crear un comando con parametros
+                
 
                 SqlCommand comando2 = new SqlCommand("SELECT * FROM Producto WHERE @Id=id", conn);
                 comando2.Parameters.AddWithValue("@Id", id);

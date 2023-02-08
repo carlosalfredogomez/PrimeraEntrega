@@ -8,13 +8,13 @@ namespace PrimeraEntrega
         static void Main(string[] args)
         {
             
-            // Traer Usuario 
-            Usuario usuario = UsuarioHandler.ObtenerUsuario(2);
-            Console.WriteLine($"Usuario Id: {usuario.Id}, Usuario: {usuario.Nombre}");
+            // Traer Usuario (recibe un int) 
+            Usuario usuario = UsuarioHandler.ObtenerUsuario(1);
+            Console.WriteLine($"Usuario Id: {usuario.Id}, Usuario: {usuario.Nombre} {usuario.Apellido}");
 
             Console.WriteLine("   ");
 
-            // Traer Productos
+            // Traer Productos (recibe id de usuario, devuelve lista)
             List<Producto> productos = ProductoHandler.ObtenerProductos(1);
             foreach (var item in productos)
             {
@@ -24,7 +24,7 @@ namespace PrimeraEntrega
             Console.WriteLine("   ");
             Console.WriteLine(" Produtos vendidos ");
 
-            // Traer Produtos vendidos
+            // Traer Produtos vendidos (recibe id de usuario, devuelve lista)
             List<Producto> productosVendidos = ProductoHandler.ObtenerProductoVendido(1);
             foreach (var item in productosVendidos)
             {
@@ -34,7 +34,7 @@ namespace PrimeraEntrega
             Console.WriteLine("    ");
             Console.WriteLine("  Ventas  ");
 
-            // Traer Ventas 
+            // Traer Ventas  (recibe id de usuario, devuelve lista)
             List<Venta> ventas = VentaHandler.ObtenerVentas(1);
             foreach (var item in ventas)
             {
@@ -43,8 +43,8 @@ namespace PrimeraEntrega
 
             Console.WriteLine("   ");
             
-            // Inicio de sesión 
-            Usuario usuarioLogin = UsuarioHandler.ObtenerUsuarioLogin("eperez", "SoyErnestoPerez");
+            // Inicio de sesión (recibe usuario y contraseña, devuelve objeto usuario)
+            Usuario usuarioLogin = UsuarioHandler.ObtenerUsuarioLogin("tcasazza", "SoyTobiasCasazza");
             Console.WriteLine($" Inicio de Sesión --- Usuario: {usuarioLogin.Nombre} \t  Apellido: {usuarioLogin.Apellido} \tMail: {usuarioLogin.Mail}");
            
 

@@ -11,6 +11,8 @@ namespace PrimeraEntrega.Handlers
     public class VentaHandler
     {
         public static string connetionString = "Data Source=QT5\\SQLEXPRESS;Initial Catalog=SistemaGestion;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        
+        
         public static List<Venta> ObtenerVentas(long idUsuario)
         {
             List<Venta> ventas = new List<Venta>();
